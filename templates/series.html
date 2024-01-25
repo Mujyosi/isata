@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Series
+{% endblock %}
+
+{% block content %}
+    {% for serie_id, serie in series.items() %}
+        <div class="container2">
+            <a href="{{ url_for('seriesdetails', serie_id=serie['id'], hex_title=hex_title, hex_details=hex_details) }}">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/' + serie['image']) }}" alt="{{ serie['Title'] }}">
+                    <div class="card-content">
+                        <div class="card-description">{{ serie['Year'] }}</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+{% endblock %}

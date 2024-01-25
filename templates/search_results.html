@@ -1,0 +1,48 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+<!-- Display matching movies -->
+<h2>Movies</h2>
+<div class="searches-results-container">
+    {% if movies %}
+        {% for movie_id, movie in movies.items() %}
+        <a href="{{ url_for('moviesdetails', movie_id=movie['id'], hex_title=hex_title, hex_details=hex_details) }}">
+                <div class="searches-result-card">
+                    <div class="episodees-container">
+                        <div class="searches-result">
+                            <img src="{{ url_for('static', filename='images/' + movie['image']) | safe }}" alt="{{ movie['Title'] }}">
+                            <h6>{{ movie['Title'] | safe }}</h6>
+                            <p>{{ movie['details'] | safe }}</p>
+                            <p>click to download more</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    {% else %}
+        <p class="ddd">No movies found.</p>
+    {% endif %}
+</div>
+
+<!-- Display matching series -->
+<h2>Series</h2>
+<div class="searches-results-container">
+    {% if series %}
+        {% for series_id, serie in series.items() %}
+        <a href="{{ url_for('seriesdetails', serie_id=serie['id'], hex_title=hex_title, hex_details=hex_details) }}">
+                <div class="searches-result-card">
+                    <img class="serieses-image" src="{{ url_for('static', filename='images/' + serie['image']) | safe }}" alt="{{ serie['Title'] }}">
+                    <div class="serieses-details">
+                        <h6>{{ serie['Title'] | safe }}</h6>
+                        <p class="serieses-description">{{ serie['details'] | safe }}</p>
+                        <p class="serieses-link-text">Click to explore</p>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    {% else %}
+        <p class="ddd">No series found.</p>
+    {% endif %}
+  </div>
+{%endblock%}

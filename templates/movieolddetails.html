@@ -1,0 +1,63 @@
+{% extends "index.html" %}
+
+{% block title %}
+    {{ movieold['Title'] }}
+{% endblock %}
+
+{% block content %}
+    <div class="image-container">
+        <div class="movie">
+            <h2>{{ movieold['Title'] }}</h2>
+            <p>Year: {{ movieold['Year'] }}</p>
+            <p>Description: {{ movieold['Details'] }}</p>
+              <img src="{{ url_for('static', filename='images/' + movieold['image']) }}" alt="{{ movieold['Title'] }}">
+            <!-- Add more content based on your movie details -->
+            
+            <a href="{{ movieold['DownloadLink'] }}" class="download" download>Download</a>
+        </div>
+    </div>
+    </div>
+ <!-- Recommender Section -->
+ <div class="recommended-container">
+    <h3>Recommended Movies</h3>
+    {% if recommendations %}
+        <div class="recommended-list">
+            {% for rec_id, rec_image in recommendations %}
+                <div class="recommended-item">
+                    <a href="{{ url_for('movieolddetails', movieold_id=rec_id) }}">
+                        <img src="{{ url_for('static', filename='images/' + rec_image) }}" alt="Recommended Movie" style="max-width: 100%; height: auto;">
+                        <p>View Details</p>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No recommendations available.</p>
+    {% endif %}
+</div>
+{% endblock %}
+
+<div class="comments-section">
+    <h3>Comments</h3>
+
+    <!-- Display existing comments -->
+    {% if movieold['comments'] %}
+        <ul>
+            {% for comment in movieold['comments'] %}
+                <li>{{ comment }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No comments yet. Be the first to comment!</p>
+    {% endif %}
+
+    <!-- Form to submit new comments -->
+    <form method="post" action="{{ url_for('add_comment', movieold_id=movieold['id']) }}">
+        <label for="new-comment">Add a comment:</label>
+        <textarea id="new-comment" name="new_comment" rows="4" cols="50"></textarea>
+        <br>
+        <button type="submit">Submit Comment</button>
+    </form>
+</div>
+
+<!-- End of Movie Details Section -->

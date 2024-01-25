@@ -1,0 +1,780 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #555;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.download-link {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background-color: #3498db;
+  color: #492c2c;
+  text-decoration: none;
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .movie-item,
+  .series-item {
+      width: 100%;
+  }
+}
+
+.container2 {
+  padding: 20px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-self: space-around;
+  align-items: center;
+  margin-left: 30px;
+  
+}
+
+
+.card{
+  background-color: #444;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 10px;
+  width: 220px;
+/* media query for screens smaller than 
+600px(adjust the value as needed)*/
+@media only screen and (max-width:600px){
+  .card{
+      width: 100%;
+      margin: 10px 0;
+      /*add other style as needed for smaller screens*/
+
+  }
+}  
+  
+ }
+img{
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #eee;
+}
+.card-description{
+  font-size: 0.9em;
+  color: #f03737;
+  
+}
+h2{
+  color: #333;
+}
+p{
+  color: #777;
+}
+  .card-content {
+    padding: 15px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 8px 15px;
+    margin-top: 10px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .btn:hover {
+    background-color: #2980b9;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hea {
+    text-align: center;
+    color: #2980b9;
+}
+
+.h1 {
+    color: #333;
+}
+.h2{
+  color: #000000;
+  text-decoration: dashed;
+  
+}
+.p {
+    color: #777;
+}
+
+.movie-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.movie-poster img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.movie-description {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.a:hover {
+    text-decoration: underline;
+}
+
+.navbar {
+  background-color: #ebe8e8;
+  color: #efefef;
+  padding: 10px 0;
+}
+
+.navbar a {
+  color: #2f2a2a;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+  text-align: center;
+  padding: 13px 15px;
+  display: block;
+}
+.navbar a:hover{
+  background-color: #2980b9;
+  color: white;
+}
+
+.navbar .logo {
+  font-size: 34px;
+  font-weight: bold;
+  display: block;
+}
+.navbar .logo a:hover{
+  background-color: none;
+  color: white;
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .search-box {
+  margin-left: 400px;
+  display: flex;
+}
+
+.navbar input {
+  padding: 8px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.navbar button {
+  background-color: #3498db;
+  border: none;
+  padding: 8px;
+  border-radius: 0 4px 4px 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .navbar .nav-links {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .navbar a {
+      margin: 10px 0;
+      color: black;
+      text-align: center;
+
+  }
+
+  .navbar .search-box {
+      margin: 10px 0;
+  }
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.img1 {
+  max-width: 100%;
+  height: auto;
+  margin: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.download{
+  display: block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+h3 {
+  margin-bottom: 10px;
+  color: rgb(50, 176, 255);
+  text-align: center;
+  
+}
+.movie {
+  text-align: center;
+  margin: 20px;
+}
+.search-results-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Style for individual search result items */
+.search-result {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  
+}
+
+/* Style for the image inside each search result */
+.img5 {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Style for the title of each search result */
+h6 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* Style for the details of each search result */
+p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Style for the "No movies found" or "No series found" message */
+.ddd {
+  font-size: 18px;
+  color: #555;
+}
+  
+
+.recommended-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Styling for recommended movies title */
+.recommended-container h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333; /* Change to your preferred text color */
+}
+
+/* Styling for recommended movies list */
+.recommended-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* Styling for each recommended movie item */
+.recommended-item {
+  margin: 10px;
+  max-width: 150px;
+  text-align: center;
+}
+
+.recommended-item img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.recommended-item a {
+  text-decoration: none;
+  color: #333; /* Change to your preferred link color */
+}
+
+.recommended-item a:hover {
+  color: #ff4500; /* Change to your preferred hover color */
+}
+
+/* Styling for recommended series container */
+.recommendations {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Styling for recommended series title */
+.recommendations h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333; /* Change to your preferred text color */
+}
+
+/* Styling for recommended series list */
+.recommendations ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* Styling for each recommended series item */
+.recommendations li {
+  margin: 10px;
+  max-width: 150px;
+  text-align: center;
+}
+
+.recommendations li img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.recommendations li a {
+  text-decoration: none;
+  color: #333; /* Change to your preferred link color */
+}
+
+.recommendations li a:hover {
+  color: #ff4500; /* Change to your preferred hover color */
+}
+.search-results-container {
+  display: flex;
+  flex-wrap: wrap;
+
+ 
+}
+
+/* Series Item Styling */
+.series-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.series-item {
+  width: 200px;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.series-item:hover {
+  box-shadow: 0 0 10px rgba(255, 251, 251, 0.2);
+}
+
+/* Series Image Styling */
+.series-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Series Details Styling */
+.series-details {
+  margin-top: 10px;
+}
+
+h6 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.series-description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.series-link-text {
+  font-size: 12px;
+  color: #007BFF;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.series-link-text:hover {
+  color: #0056b3;
+}
+.movie-details {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.movie-details h2 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.movie-details p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.movie-details img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.section {
+  margin: 20px 0;
+  margin-left: 100px;
+}
+
+h2,h3,h4,h5,h6,p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+  margin-left: 100px;
+}
+/* Style the recommendations container */
+.recommendations {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Style the heading */
+.recommendations h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Style the recommended-list */
+.recommendations ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* Style each recommended-item */
+.recommendations li {
+  margin: 10px;
+  text-align: center;
+}
+
+/* Style the recommended-item image */
+.recommendations li img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Style the recommended-item alt text */
+.recommendations li img[alt="Recommended Series"] {
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Add some spacing for better visual separation */
+.recommendations p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #888;
+}
+
+
+/* Reset some default margin and padding */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.image-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.movie {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.movie img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ccc; /* Add a border around the image */
+}
+
+.movie h3 {
+  color: #333;
+}
+
+.episode-container,
+.recommendations {
+  margin-top: 20px;
+}
+
+.episode-container ul,
+.recommendations ul {
+  list-style-type: none;
+}
+
+.episode-container li,
+.recommendations li {
+  margin-bottom: 10px;
+}
+
+.episode-container .download,
+.recommendations img {
+  display: block;
+  margin-top: 5px;
+  text-align: center;
+  padding: 5px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  
+}
+
+.episode-container .download:hover,
+.recommendations img:hover {
+  background-color: #2980b9;
+}
+
+
+
+/* Overall styling for search results container */
+.search-results-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+  
+}
+
+/* Styles for Movie and Series Cards */
+.search-results-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.search-result-card, .series-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.search-result-card:hover, .series-item:hover {
+  transform: translateY(-5px);
+}
+
+.episode-container, .series-details {
+  padding: 15px;
+}
+
+.search-result img, .series-image {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.search-result h6, .series-details h6 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.search-result p, .series-description {
+  color: #666;
+}
+
+.series-link-text {
+  color: #3498db;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .search-results-container {
+      flex-direction: column;
+  }
+
+  .search-result-card, .series-item {
+      width: 100%;
+  }
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+}
+
+/* Styles for Movie Cards */
+.searches-result-card {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  max-width: 20%;
+}
+
+.searches-result-card:hover {
+  transform: scale(1.05);
+}
+
+.searches-result-card img {
+  max-width: 100%;
+  height: auto;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.searches-result-card h6 {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.searches-result-card p {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Styles for Series Cards */
+.serieses-item {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.serieses-item:hover {
+  transform: scale(1.05);
+}
+
+.serieses-item img {
+  max-width: 100%;
+  height: auto;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.serieses-item h6 {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.serieses-item p.serieses-description {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #666;
+}
+
+.serieses-item p.serieses-link-text {
+  color: #3498db;
+  font-weight: bold;
+}
+
+/* Add this CSS in your style.css file or within a <style> tag in your HTML */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove underline for the link */
+}
+
+.logo img {
+  height: 30px; 
+  width: 30px;/* Adjust the height as needed */
+  margin-right: 5px; /* Add space between the logo and text */
+  border-radius: 5%; /* Add a border-radius for a circular effect (optional) */
+}
+
+.logo span {
+  font-size: 18px; /* Adjust the font size of the text */
+  font-weight: bold; /* Optionally make the text bold */
+}
+.episode-container {
+  flex: 1;
+  margin-top: 20px; /* Add some spacing between movie details and episodes */
+}
+
+.episode-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.episode-container ul li {
+  margin-bottom: 10px;
+}

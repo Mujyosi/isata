@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Movies
+{% endblock %}
+
+{% block content %}
+    {% for movieold_id, movieold in movieolds.items() %}
+        <div class="container2">
+            <a href="{{ url_for('movieolddetails', movieold_id=movieold_id, hex_title=movieold['hex_title'], hex_details=movieold['hex_details']) }}">
+
+                 <div class="card">
+                    <img src="{{ url_for('static', filename='images/' + movieold['image']) }}" alt="{{ movieold['Title'] }}">
+                   
+                
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+{% endblock %}

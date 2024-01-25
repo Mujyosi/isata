@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+
+{% block title %}
+    {{ serie['Title'] }} - Series Details
+{% endblock %}
+
+{% block content %}
+    <div class="image-container">
+        <div class="movie">
+            <h3>{{ serie['Title'] }}</h3>
+            <p>Year Released: {{ serie['Year'] }}</p>
+            <p>Description: {{ serie['Details'] }}</p>
+    
+            <img src="{{ url_for('static', filename='images/' + serie['image']) }}" alt="{{ serie['Title'] }}">
+        </div>
+
+        <!-- Add other details based on your series data -->
+       
+        <!-- Episodes Section -->
+        <div class="episode-container">
+            <h3>Episodes</h3>
+            {% if serie.get('Episodes') %}
+                <ul>
+                    {% for episode_id, episode in serie['Episodes'].items() %}
+                        <li>
+                            <p>{{ episode['Title'] }}</p>
+                            <a href="{{ episode['DownloadLink'] }}" class="download" target="_blank">Download Episode</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No episodes available.</p>
+            {% endif %}
+        </div>
+
+        <!-- Recommended Series Section -->
+        <div class="recommendations">
+            <h3>Recommended Series</h3>
+            {% if recommendations %}
+                <ul>
+                    {% for recommendation in recommendations %}
+                        <li>
+                            <a href="{{ url_for('seriesdetails', serie_id=recommendation[0]) }}">
+                                <img src="{{ url_for('static', filename='images/' + recommendation[1]) }}" alt="Recommended Series">
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No recommendations available.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

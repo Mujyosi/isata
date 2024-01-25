@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+
+{% block title %}
+    {{ movie['Title'] }}
+{% endblock %}
+
+{% block content %}
+    <div class="movie-details">
+        <div class="movie">
+            <h2>{{ movie['Title'] }}</h2>
+            <p>Year: {{ movie['Year'] }}</p>
+            <p>Description: {{ movie['Details'] }}</p>
+            <!-- Display Movie Image -->
+            <img src="{{ url_for('static', filename='images/' + movie['image']) }}" alt="{{ movie['Title'] }}">
+            
+            <!-- Add more content based on your movie details -->
+            
+            <a href="{{ movie['DownloadLink'] }}" class="download" download>Download</a>
+        </div>
+    </div>
+
+ <!-- Recommended Movies Section -->
+<div class="recommended-container">
+    <h3>Recommended Movies</h3>
+    {% if recommendations %}
+        <div class="recommended-list">
+            {% for rec_id, rec_image in recommendations %}
+                <div class="recommended-item">
+                    <a href="{{ url_for('moviesdetails', movie_id=rec_id) }}">
+                        <img src="{{ url_for('static', filename='images/' + rec_image) }}" alt="Recommended Movie" style="max-width: 100%; height: auto;">
+                        <p><a href="{{ url_for('moviesdetails', movie_id=rec_id) }}">View Details</a></p>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No recommendations available.</p>
+    {% endif %}
+</div>
+</div>
+{% endblock %}

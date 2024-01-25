@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{%block title%}
+{{ topone['Title'] }}
+{%endblock%}
+{%block content%}
+<div class="image-container">
+<div class="movie">
+   <h3>{{ topone['Title'] }}</h3>
+   <p class="pth">Icamake:{{topone['details']}}</p>
+   <p>YEAR Realesed:{{topone['Year']}}</p>
+   <img src="{{ url_for('static', filename='images/' + topone['image']) }}" alt="{{ topone['Title'] }}">
+   <a href="{{ topone['DownloadLink'] }}" class="download" download>Download</a>
+   </div>
+</div>
+</a>
+{%endblock%}
+
+<!-- Conditional Download Link -->
+{% if some_condition %}
+    <a href="{{ topone['DownloadLink'] }}" class="download" download>Download</a>
+{% else %}
+    <p>No download available.</p>
+{% endif %}

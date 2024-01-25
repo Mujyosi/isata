@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+{% block title %}
+    TOPONES
+{% endblock %}
+
+{% block content %}
+    {% for topone_id, topone in topones.items() %}
+        <div class="container2">
+            <div class="card">
+                <a href="{{ url_for('toponesdetails', topone_id=topone_id) }}">
+                    <img src="{{ url_for('static', filename='images/' + topone['image']) }}" alt="{{ topone['Title'] }}">
+                    <div class="card-content">
+                        <div class="card-description">{{ topone['Year'] }}</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
