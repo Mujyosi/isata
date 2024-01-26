@@ -192,3 +192,5 @@ def search_results():
     return render_template('search_results.html', query=query, movies=matching_movies, series=matching_series, serie_id=serie_id, movie_id=movie_id)
 
 
+if __name__=="__main__":
+    app.run
